@@ -18,8 +18,7 @@
         <div class="login-form-section">
             <h2>Login to Your Account</h2>
             <p>Enter your username and password to access your account.</p>
-            <form class="login-form" method="POST" action="{{ url('/login') }}">
-                @csrf
+            <form class="login-form" onsubmit="handleLogin(event)">
                 <div>
                     <label for="username">Username</label>
                     <div class="input-wrapper">
@@ -31,7 +30,7 @@
                     <input type="password" id="password" name="password" placeholder="Type your password here" required>
                 </div>
                 <button type="submit" class="login-btn">Log In</button>
-                <p class="register-link">Don't have an account? <a href="/signup" class="join-link">Join us today</a></p>
+                <p class="register-link">Don't have an account? <a href="/register" class="join-link">Join us today</a></p>
             </form>
         </div>
         <div class="login-image-section">
@@ -47,5 +46,23 @@
             </svg>
         </div>
     </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            // Simulate loading
+            const loginBtn = document.querySelector('.login-btn');
+            const originalText = loginBtn.textContent;
+            loginBtn.textContent = 'Logging in...';
+            loginBtn.disabled = true;
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Redirect to customer dashboard
+                window.location.href = '/customer/dashboard';
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
