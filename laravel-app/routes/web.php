@@ -37,6 +37,11 @@ Route::get('/product-customer', function () {
     return view('product-customer');
 })->name('product.customer');
 
+// Route untuk halaman testimoni customer (frontend only)
+Route::get('/customer/testimoni', function () {
+    return view('customer-testimoni');
+})->name('customer.testimoni');
+
 // Route original dengan middleware (untuk nanti)
 // Route::get('/customer/dashboard', [CustomerDashboardController::class, 'index'])
 //     ->middleware(['auth', 'role:cust']);

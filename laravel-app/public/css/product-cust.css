@@ -511,3 +511,84 @@ body {
         padding: 0.7rem 0;
     }
 } 
+
+/* Modal Testimoni */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0,0,0,0.32);
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    margin: 8% auto;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    max-width: 400px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative;
+    text-align: center;
+}
+.close {
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+}
+.star-rating {
+    margin: 1.2rem 0 0.5rem 0;
+    font-size: 2.2rem;
+    color: #FEBC2E;
+    user-select: none;
+}
+.star {
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0 0.15em;
+}
+.star:hover,
+.star.selected {
+    color: #FE8400;
+}
+.submit-testimoni-btn {
+    background: #FE8400;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.7rem 2.2rem;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.submit-testimoni-btn:hover {
+    background: #e06d00;
+}
+.rate-btn {
+    background: #fff;
+    color: #FE8400;
+    border: 1.5px solid #FE8400;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.rate-btn:hover {
+    background: #FE8400;
+    color: #fff;
+} 

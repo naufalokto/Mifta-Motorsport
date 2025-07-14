@@ -15,7 +15,7 @@
         <nav class="header-menu">
             <a href="/customer/dashboard" class="header-link">Service</a>
             <a href="/product-customer" class="header-link active">Product</a>
-            <a href="#" class="header-link">Testimonial</a>
+            <a href="#" class="header-link" onclick="openTestimoniModal(); return false;">Testimonial</a>
             <a href="#" class="header-link">Help</a>
         </nav>
         <div class="header-user" id="headerUser">
@@ -79,6 +79,22 @@
             </div>
         </div>
     </div>
+    <!-- Testimoni Modal Pop Up (copy dari dashboard, pastikan class dan id sama) -->
+    <div id="testimoniModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeTestimoniModal()">&times;</span>
+            <h2>Rate Our Service</h2>
+            <div class="star-rating">
+                <span class="star" data-value="1">&#9734;</span>
+                <span class="star" data-value="2">&#9734;</span>
+                <span class="star" data-value="3">&#9734;</span>
+                <span class="star" data-value="4">&#9734;</span>
+                <span class="star" data-value="5">&#9734;</span>
+            </div>
+            <textarea id="testimoniMessage" placeholder="Your Message" rows="4" style="width:100%;margin-top:1rem;"></textarea>
+            <button class="submit-testimoni-btn" style="margin-top:1.5rem;">Submit</button>
+        </div>
+    </div>
     <script>
         // Toggle dropdown on click user/profile
         const headerUser = document.getElementById('headerUser');
@@ -98,6 +114,23 @@
             rect.addEventListener('click', function() {
                 rectangles.forEach(r => r.classList.remove('active'));
                 this.classList.add('active');
+            });
+        });
+
+        // Modal Testimoni
+        function openTestimoniModal() {
+            document.getElementById('testimoniModal').style.display = 'block';
+        }
+        function closeTestimoniModal() {
+            document.getElementById('testimoniModal').style.display = 'none';
+        }
+        // Star rating interaction
+        const stars = document.querySelectorAll('.star-rating .star');
+        stars.forEach((star, idx) => {
+            star.addEventListener('click', function() {
+                stars.forEach((s, i) => {
+                    s.innerHTML = i <= idx ? '&#9733;' : '&#9734;';
+                });
             });
         });
     </script>
